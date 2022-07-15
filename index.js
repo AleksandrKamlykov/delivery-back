@@ -3,6 +3,8 @@ const discounts = require('./routes/getDiscount');
 const orders = require('./routes/getOrders');
 const products = require('./routes/getProducts');
 const shops = require('./routes/getShops');
+const createOrder = require('./routes/creacteOrder');
+const checkDiscount = require('./routes/checkDiscount');
 
 
 const app = express();
@@ -24,6 +26,8 @@ app.use('/discounts', discounts);
 app.use('/orders', orders);
 app.use('/shops', shops);
 app.use('/products', products);
+app.use('/create-order', createOrder);
+app.use('/check-discount', checkDiscount);
 
 app.get('/', (req, res) => {
     res.send('app is wirking');
