@@ -2,7 +2,7 @@ const { Router, json } = require('express');
 const router = Router();
 const axios = require('axios');
 
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
 
     const body = req.body;
 
