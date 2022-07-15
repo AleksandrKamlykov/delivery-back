@@ -1,4 +1,10 @@
 const express = require('express');
+const discounts = require('./routes/getDiscount');
+const orders = require('./routes/getOrders');
+const products = require('./routes/getProducts');
+const shops = require('./routes/getShops');
+
+
 const app = express();
 const port = process.env.PORT || 8080;
 
@@ -14,8 +20,13 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/discounts', discounts);
+app.use('/orders', orders);
+app.use('/shops', shops);
+app.use('/products', products);
+
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.send('app is wirking');
 });
 
 app.listen(port, () => {
