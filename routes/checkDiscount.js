@@ -13,9 +13,9 @@ router.get('/', async (req, res, next) => {
         const result = discounts.data.find((discount) => discount.code == key);
 
         if (result) {
-            res.send(JSON.stringify(result.precent));
+            res.send(JSON.stringify({ ok: true, precent: result.precent }));
         } else {
-            res.send('that discount code is not there');
+            res.send({ ok: false, message: 'that discount code is not there' });
         }
     }
 
